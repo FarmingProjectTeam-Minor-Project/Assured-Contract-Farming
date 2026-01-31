@@ -1,0 +1,130 @@
+<!-- Navigation Bar -->
+<nav 
+  class="w-full shrink bg-[linear-gradient(90.8deg,rgba(27,53,68,1)_2.2%,rgba(110,180,135,1)_84%)]
+         shadow-lg">
+
+  <div class="flex items-center justify-between gap-5 px-6 py-4">
+
+    <!-- LOGO -->
+    <h1
+      class="text-[20px] font-extrabold tracking-widest text-white
+             animate-pulse hover:scale-105 transition duration-300">
+
+      Assured Contract Farming
+    </h1>
+
+
+    <!-- LINKS (DESKTOP) -->
+    <ul
+      class="hidden md:flex gap-8 text-lg text-white font-semibold items-center whitespace-nowrap">
+
+      <li>
+        <a href="{{ url_for('home') }}"
+           class="hover:underline underline-offset-4 hover:text-teal-300 transition">
+          <i class="ri-home-4-line"></i> Home
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('how_it_works') }}"
+           class="hover:underline underline-offset-4 hover:text-teal-300 transition">
+          <i class="ri-global-fill"></i>  How It Works
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('features') }}"
+           class="hover:underline underline-offset-4 hover:text-teal-300 transition">
+          <i class="ri-remix-fill"></i>  Features
+        </a>
+      </li>
+
+      <li>
+        <a href="{{ url_for('contact') }}"
+           class="hover:underline underline-offset-4 hover:text-teal-300 transition">
+          <i class="ri-mail-fill"></i>  Contact
+        </a>
+      </li>
+
+    </ul>
+
+
+    <!-- AUTH (DESKTOP) -->
+    <div class="hidden md:flex gap-4">
+
+      <a href="{{ url_for('login') }}"
+         class="px-5 py-2 border border-white text-white rounded-xl font-semibold
+                hover:ring-2 hover:ring-teal-400 hover:scale-105
+                transition duration-300">
+
+        Login
+      </a>
+
+      <a href="{{ url_for('register') }}"
+         class="px-5 py-2 bg-teal-500 text-white rounded-xl font-semibold
+                hover:bg-teal-600 hover:scale-105
+                transition duration-300">
+
+        Register
+      </a>
+
+    </div>
+
+
+    <!-- HAMBURGER (MOBILE) -->
+    <div
+      class="md:hidden text-3xl cursor-pointer text-white
+             hover:scale-110 transition duration-300"
+      onclick="toggleMenu()">
+
+      ☰
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- MOBILE MENU -->
+<div
+  id="mobileMenu"
+  class="hidden md:hidden
+         bg-[linear-gradient(180deg,rgba(27,53,68,1),rgba(110,180,135,1))]
+         text-white shadow-xl px-6 py-4">
+
+  <ul class="flex flex-col gap-4 text-lg font-semibold">
+
+    <li><a href="{{ url_for('home') }}" class="hover:text-teal-300">Home</a></li>
+    <li><a href="{{ url_for('how_it_works') }}" class="hover:text-teal-300">How It Works</a></li>
+    <li><a href="{{ url_for('features') }}" class="hover:text-teal-300">Features</a></li>
+    <li><a href="{{ url_for('contact') }}" class="hover:text-teal-300">Contact</a></li>
+
+    <hr class="border-white/40">
+
+    <li>
+      <a href="{{ url_for('login') }}"
+         class="block text-center border border-white rounded py-2
+                hover:bg-white hover:text-black transition">
+        Login
+      </a>
+    </li>
+
+    <li>
+      <a href="{{ url_for('register') }}"
+         class="block text-center bg-teal-500 rounded py-2
+                hover:bg-teal-600 transition">
+        Register
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+
+<!-- TOGGLE SCRIPT -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+</script>

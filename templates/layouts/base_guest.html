@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Contract Farming{% endblock %}</title>
+
+    <!-- Tailwind CSS (CDN for now) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+<body class="bg-[radial-gradient(circle_farthest-corner_at_96.1%_7.2%,rgba(9,178,62,1)_0%,rgba(19,19,19,1)_100.2%)]">
+
+    <!-- NAVBAR -->
+    {% include "partials/guest_navbar.html" %}
+
+    <!-- PAGE CONTENT -->
+    <main class="min-h-screen">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-linear-to-r from-[#064e3b] to-emerald-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
+            <!-- BRAND -->
+            <div>
+                <h2 class="text-2xl font-bold tracking-wide">
+                    Assured Contract Farming
+                </h2>
+
+                <p class="mt-4 text-green-100 text-sm leading-relaxed">
+                    A digital platform connecting farmers and buyers through
+                    secure contracts, transparent pricing, and reliable payments.
+                </p>
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">
+                    Quick Links
+                </h3>
+
+                <ul class="space-y-2 text-green-100">
+                    <li>
+                        <a href="{{ url_for('home') }}"
+                            class="hover:text-white transition">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('how_it_works') }}"
+                            class="hover:text-white transition">
+                            How It Works
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('features') }}"
+                            class="hover:text-white transition">
+                            Features
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('contact') }}"
+                            class="hover:text-white transition">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div>
+                <h3 class="text-lg font-semibold mb-4">
+                    Contact Us
+                </h3>
+
+                <ul class="space-y-3 text-green-100 text-sm">
+
+                    <li class="flex items-center gap-2">
+                        <i class="ri-mail-line"></i>
+                        support@contractfarming.com
+                    </li>
+
+                    <li class="flex items-center gap-2">
+                        <i class="ri-phone-line"></i>
+                        +91 98765 43210
+                    </li>
+
+                    <li class="flex items-center gap-2">
+                        <i class="ri-map-pin-line"></i>
+                        India
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <!-- BOTTOM BAR -->
+        <div class="border-t border-white/20">
+
+            <div class="max-w-7xl mx-auto px-6 py-4 text-center text-green-100 text-sm">
+                © 2026 Assured Contract Farming System. All Rights Reserved.
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
