@@ -1,0 +1,92 @@
+
+
+{% extends "layouts/base_guest.html" %} 
+{% block title %}Login |ContractFarming{% endblock %} {% block content %}
+
+<section class="min-h-screen flex items-center justify-center bg-linear-to-r from-gray-100 to-blue-200 px-4">
+  <!-- Login Container -->
+   <div class="max-w-4xl w-full bg-white rounded-2xl shadow-2xl flex overflow-hidden border-2 border-transparent hover:border-emerald-800 hover:shadow-emerald-800 transition-all duration-300">
+      <!-- LEFT PANEL (FORM) -->
+      <div class="w-full md:w-1/2 px-10 py-12">
+        <h2 class="text-center font-bold text-4xl text-emerald-800 mb-2">
+          Login
+        </h2>
+
+        <p class="text-sm text-center text-gray-400 mb-6">
+          If you are already a member, easily log in
+        </p>
+
+        <!-- FORM -->
+        <form class="flex flex-col gap-4">
+          <!-- Email -->
+          <input class="border p-2 rounded-xl bg-amber-50 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          type="email" name="email" placeholder="Email" required/>
+
+          <!-- Password -->
+          <div class="relative">
+            <input class="border p-2 rounded-xl bg-amber-50 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              type="password" name="password" placeholder="Password" required/>
+
+            <!-- Eye Icon -->
+            <i class="ri-eye-line absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 cursor-pointer"></i>
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="bg-emerald-800 text-white py-2 rounded-xl hover:bg-emerald-700 transition cursor-pointer">
+            Login
+          </button>
+        </form>
+
+        <!-- OR -->
+        <div class="my-8 grid grid-cols-3 items-center text-gray-400">
+          <hr />
+          <p class="text-center text-sm">OR</p>
+          <hr />
+        </div>
+
+        <!-- Google Login -->
+        <button class="border py-2 w-full rounded-xl flex justify-center items-center gap-2 hover:bg-gray-100 transition cursor-pointer">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" class="w-5"/>
+          Login with Google
+        </button>
+
+        <!-- Forgot Password -->
+        <p class="text-sm text-center mt-4">
+          <a href="#" class="text-emerald-700 hover:underline">
+            Forgot your password?
+          </a>
+        </p>
+
+        <!-- Register -->
+        <div class="text-sm flex justify-between items-center mt-6">
+          <p>Don't have an account?</p>
+
+          <a href="{{url_for('register')}}" class="border border-emerald-800 px-5 py-2 rounded-md hover:bg-emerald-800 hover:text-white transition">
+            Register
+          </a>
+        </div>
+      </div>
+
+    <!-- RIGHT PANEL (VIDEO BACKGROUND) -->
+      <div class="hidden md:flex w-1/2 relative overflow-hidden shadow-lg text-white flex-col items-center justify-center p-10 rounded-l-[120px]">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+          <source src="{{ url_for('static', filename='videos/6.mp4') }}" type="video/mp4"/>
+        </video>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/20"></div>
+
+          <!-- Content -->
+          <div class="relative z-10 text-center">
+            <h2 class="text-3xl font-bold mb-4">Welcome Back!</h2>
+
+            <p class="text-center mb-6 text-sm">
+              Enter your personal details and start your journey with us
+            </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% endblock %}

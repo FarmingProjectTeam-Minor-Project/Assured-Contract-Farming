@@ -24,3 +24,50 @@
       both;
   }
 }
+
+
+
+/* ================= HOW IT WORKS PAGE ================= */
+
+.step-card{
+  background:white;
+  padding:24px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.step-card:hover{
+  transform:translateY(-6px);
+}
+
+.step-card i{
+  font-size:32px;
+  color:#16a34a;
+}
+
+.step-card p{
+  margin-top:10px;
+  font-weight:600;
+}
+
+
+.benefit-card{
+  background:#f9fafb;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.benefit-card i{
+  font-size:36px;
+  color:#16a34a;
+  margin-bottom:10px;
+}
+
+.benefit-card h4{
+  font-weight:700;
+  margin-bottom:6px;
+}
+

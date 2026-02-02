@@ -1,0 +1,258 @@
+{% extends "layouts/base_guest.html" %}
+
+{% block title %}How It Works | Contract Farming{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO WITH VIDEO ================= -->
+<section class="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden bg-white">
+
+  <!-- Background Video -->
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <source src="{{ url_for('static', filename='videos/3.mp4') }}" type="video/mp4">
+
+         Your browser does not support video.
+    </video>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6 text-white max-w-3xl">
+
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Connect Farmers with Buyers
+        </h1>
+
+        <p class="text-lg text-gray-200 mb-6">
+        We bridge the gap between farmers and buyers, ensuring fair pricing
+        and secure trading.
+        </p>
+
+        <!-- Optional Buttons -->
+        <div class="flex justify-center gap-4">
+
+            <a href="{{ url_for('register') }}"
+                class="px-6 py-3 bg-green-600 rounded-lg hover:bg-green-700 transition">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('contact') }}"
+                class="px-6 py-3 border border-white rounded-lg hover:bg-white hover:text-black transition">
+                Contact Us
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- ================= SELECT USER ================= -->
+<section class="py-20 bg-gray-200">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-center mb-12">
+            Choose Your Role
+        </h2>
+
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Farmer -->
+            <div onclick="showProcess('farmer')" class="bg-white p-8 rounded-xl shadow cursor-pointer hover:shadow-xl transition">
+                    <i class="ri-plant-line text-4xl text-green-600"></i>
+
+                    <h3 class="text-2xl font-semibold mt-4">
+                        For Farmers
+                    </h3>
+
+                    <p class="mt-2 text-gray-600">
+                        Sell crops directly and get fair pricing.
+                    </p>
+
+            </div>
+
+
+            <!-- Buyer -->
+            <div onclick="showProcess('buyer')" class="bg-white p-8 rounded-xl shadow cursor-pointer hover:shadow-xl transition">
+                    <i class="ri-shopping-bag-line text-4xl text-green-600"></i>
+
+                    <h3 class="text-2xl font-semibold mt-4">
+                    For Buyers
+                    </h3>
+
+                    <p class="mt-2 text-gray-600">
+                    Buy quality crops directly from farmers.
+                    </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= FARMER STEPS ================= -->
+<section id="farmer" class="hidden py-20 bg-green-50">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold text-center mb-12 text-green-700">
+            Farmer Process
+        </h2>
+
+
+        <div class="grid md:grid-cols-5 gap-6 text-center">
+
+
+            {% set farmer_steps = [
+                ('ri-user-add-line','Create Account'),
+                ('ri-seedling-line','List Crops'),
+                ('ri-chat-3-line','Get Enquiries'),
+                ('ri-hand-coin-line','Negotiate'),
+                ('ri-truck-line','Deliver')
+            ] %}
+
+            {% for icon,text in farmer_steps %}
+
+            <div class="step-card">
+                <i class="{{ icon }}"></i>
+                <p>{{ text }}</p>
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= BUYER STEPS ================= -->
+<section id="buyer" class="hidden py-20 bg-emerald-50">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center mb-12 text-emerald-700">
+      Buyer Process
+    </h2>
+
+
+    <div class="grid md:grid-cols-5 gap-6 text-center">
+
+
+      {% set buyer_steps = [
+        ('ri-user-add-line','Register'),
+        ('ri-search-line','Search Crops'),
+        ('ri-file-list-line','Compare'),
+        ('ri-shake-hands-fill','Deal'),
+        ('ri-secure-payment-line','Pay Securely')
+      ] %}
+
+      {% for icon,text in buyer_steps %}
+
+      <div class="step-card">
+        <i class="{{ icon }}"></i>
+        <p>{{ text }}</p>
+      </div>
+
+      {% endfor %}
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= BENEFITS ================= -->
+<section class="py-20 bg-white">
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center mb-12">
+      Platform Benefits
+    </h2>
+
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+
+      <div class="benefit-card">
+        <i class="ri-links-line"></i>
+        <h4>Direct Trading</h4>
+        <p>No middlemen, more profit.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="ri-shield-check-line"></i>
+        <h4>Secure Deals</h4>
+        <p>Verified contracts.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="ri-flashlight-line"></i>
+        <h4>Fast Payments</h4>
+        <p>Quick transactions.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+<section class="py-20 bg-green-600 text-white text-center">
+
+  <h2 class="text-3xl font-bold mb-4">
+    Ready to Start?
+  </h2>
+
+  <p class="mb-6">
+    Join thousands of farmers and buyers today.
+  </p>
+
+  <a href="{{url_for('register')}}"
+     class="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
+
+    Join Now
+
+  </a>
+
+</section>
+
+
+
+
+<!-- ================= PAGE SCRIPT ================= -->
+<script>
+
+function showProcess(type){
+
+  document.getElementById("farmer").classList.add("hidden");
+  document.getElementById("buyer").classList.add("hidden");
+
+  document.getElementById(type).classList.remove("hidden");
+
+  window.scrollTo({
+    top: document.getElementById(type).offsetTop - 80,
+    behavior: "smooth"
+  });
+
+}
+
+</script>
+
+
+{% endblock %}
